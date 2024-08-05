@@ -1,7 +1,11 @@
 import React from 'react'
 
-export const BtnPry = () => {
+export const BtnPry = (props) => {
+  const {text, onClick = () => {}, type = "button"} = props;
+
   return (
-    <div className='flex w-[360px] h-[55px] bg-[#2F3538]'></div>
+    <button className="flex w-full h-[55px] bg-[#2F3538] items-center justify-center rounded-[8px] mb-10" onClick={onClick} type={type}>
+      <p className="text-[#FFFFFF] text-base ">{text}</p>
+    </button>
   )
 }
