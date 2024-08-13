@@ -1,11 +1,15 @@
 import axios from "./axios";
 
-export const login = (payload) => {
-    axios.post('/auth/login', payload)
+export const login = async (payload) => {
+    return axios.post('/auth/login', payload)
         .then(function (response) {
-            console.log(response)
+            return {status:true, response};
         })
         .catch(function (error) {
-            console.log(error);
+            return {status:false, response:error}
         });
+}
+
+export const register = (payload) => {
+
 }
